@@ -46,7 +46,7 @@ class AboutProxyObjectProject < EdgeCase::Koan
   def test_proxy_method_returns_wrapped_object
     # NOTE: The Television class is defined below
     tv = Proxy.new(Television.new)
-    
+
     assert tv.instance_of?(Proxy)
   end
   
