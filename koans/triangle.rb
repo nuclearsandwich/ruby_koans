@@ -14,7 +14,24 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  raise TriangleError if [a,b,c].any? do |side|
+    side <= 0
+  end
+
+  if a == b and b == c
+    :equilateral
+  elsif a == b
+    raise TriangleError if c > a
+    :isosceles
+  elsif b == c
+    raise TriangleError if a > b
+    :isosceles
+  elsif a == c
+    raise TriangleError if b > c
+    :isosceles
+  else
+    :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
