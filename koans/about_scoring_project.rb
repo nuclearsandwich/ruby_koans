@@ -28,14 +28,13 @@ def score(dice)
 
   if ones_count >= 3
     score += 1000 
-    score += 100 * ones_count - 3 if ones_count > 3
+    score += 100 * (ones_count - 3) if ones_count > 3
     dice.delete 1
   end
 
   if (fives_count = dice.count{ |i| i == 5 }) >= 3
     score += 500
-    score += 50 * fives_count - 3 if fives_count > 3
-    puts score
+    score += 50 * (fives_count - 3) if fives_count > 3
     dice.delete 5
   end
 
